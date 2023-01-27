@@ -1,0 +1,43 @@
+#https://api.postman.com/collections/17001479-be6fcdaa-ce73-4a65-9f4f-9b877589e3c4?access_key=PMAT-01GPNF8W8RMXJAEN706W17GWMC
+server:
+  port: 8090
+spring:
+  datasource:
+    database: mssql
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: 
+    username: bi_user1
+    password: sql
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      pool-name: db-pool
+      maximum-pool-size: 4
+      max-lifetime: 1800000
+      idle-timeout: 30000
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        default_schema: NOSQL_AUDIT
+        dialect: org.hibernate.dialect.SQLServerDialect
+  sql:
+    init:
+      platform: mssql
+  mvc:
+    servlet:
+      load-on-startup: 1
+  devtools:
+    restart:
+      additional-paths : /src/main/resources
+  async:
+    pool-name: Async
+    core-pool-size: 3
+    max-pool-size: 50
+    queue-capacity: 1
+logging:
+  level:
+    root: info
+
+
+
+

@@ -1,0 +1,14 @@
+SQLTONOSQL JOB -> run
+1. SSI_AUDIT -> preScript -> batch_id , Sub_batch_id
+2. 3 Modules (contact,claim,policy) will run in loop
+	1. contact ->
+		SSI_AUDIT -> WFPostScript
+		1. if successful inset in audit log , control table
+		2. if fails catch exception and insert in audit log,job_details,job_details_history
+
+3. when 1st loop ends -> SSI_AUDIT -> postScript
+end ->
+SSI_AUDIT -> postScript -> batch_id , Sub_batch_id , error
+if fails
+
+4. job level exception -> insert into job_details and job_details history

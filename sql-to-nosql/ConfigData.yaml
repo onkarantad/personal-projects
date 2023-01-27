@@ -1,0 +1,30 @@
+source:
+ source_database: mssql
+ source_driver_class: com.microsoft.sqlserver.jdbc.SQLServerDriver
+ source_jdbc_url: 
+ source_user_id: bi_user1
+ source_password: sql
+ source_schema_nm: SI_CORE_DWH_SSI_ABSA
+ audit_schema_nm: SI_AUDIT_SSI_ABSA
+ source_zone_id: America/Los_Angeles
+target:
+ target_database: mongoDB
+ target_database_uri: 
+ target_database_name: sqlToMongoDEMO
+ target_audit_database_name: sqlToMongo_AuditDEMO
+ incr_loop_ind: 0
+ batch_enable_ind: 1
+ batch_size: 5000
+ target_zone_id: America/Los_Angeles
+logging:
+ log_folderpath: D:/file/nosql
+ log_filename: nosqlssiLog
+ log_filesize: 20MB
+ log_rolloversize: 10
+ log_mode: info
+auditingRestURL:
+ pre_script_url: 'http://localhost:8090/audit/microJob/preScript'
+ post_script_url: 'http://localhost:8090/audit/microJob/postScript'
+ augit_log_url: 'http://localhost:8090/audit/microJob/auditLog'
+ audit_log_exce_url: 'http://localhost:8090/audit/microJob/auditLogExce'
+ job_level_exce_url: 'http://localhost:8090/audit/microJob/jobLevelExce'

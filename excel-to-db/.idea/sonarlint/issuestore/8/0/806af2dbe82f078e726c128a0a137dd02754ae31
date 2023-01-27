@@ -1,0 +1,39 @@
+
+P
+java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ËµÎ³úÿÿÿÿ
+]
+java:S2259B"GA "NullPointerException" could be thrown; "nextCell1" is nullable here.(Øš¹
+j
+java:S20952"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ƒ»ÊŞûÿÿÿÿ
+e
+java:S2095,"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¼Ö‰»üÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(Çµí‘
+S
+java:S1854%"=Remove this useless assignment to local variable "batchSize".(°©£Æ
+P
+java:S1854{":Remove this useless assignment to local variable "result".(éıŸ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(âœûÖûÿÿÿÿ
+D
+java:S1481%".Remove this unused "batchSize" local variable.(°©£Æ
+P	java:S1251"<This block of commented-out lines of code should be removed.(ğò	
+N	java:S1066"9Replace this use of System.out or System.err by a logger.(£§Óà
+S	java:S1067"9Replace this use of System.out or System.err by a logger.(öË’‘ıÿÿÿÿ
+S	java:S106@"9Replace this use of System.out or System.err by a logger.(¾…±Ñşÿÿÿÿ
+S	java:S106E"9Replace this use of System.out or System.err by a logger.(¸á‹Èÿÿÿÿÿ
+Q	java:S125q"<This block of commented-out lines of code should be removed.(ºÆ´œ
+A
+java:S1481{"+Remove this unused "result" local variable.(éıŸ
+S	java:S106~"9Replace this use of System.out or System.err by a logger.(Õ•€ïøÿÿÿÿ
+X	java:S125}"<This block of commented-out lines of code should be removed.(©å÷å8…Û˜£¶0
+u
+java:S2142‚"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€
+Y	java:S125€"<This block of commented-out lines of code should be removed.(ş²¡å8òç £¶0
+W	java:S125ˆ"<This block of commented-out lines of code should be removed.(¢íÅĞşÿÿÿÿ
+W	java:S125‘"<This block of commented-out lines of code should be removed.(½ßéşÿÿÿÿ
+]
+java:S3457–"AFormat specifiers should be used instead of string concatenation.(ŞÕ‚ğşÿÿÿÿ
+T	java:S106–"9Replace this use of System.out or System.err by a logger.(ŞÕ‚ğşÿÿÿÿ
+O	java:S106™"9Replace this use of System.out or System.err by a logger.(ëòÆ²
+T	java:S106œ"9Replace this use of System.out or System.err by a logger.(’’Úäúÿÿÿÿ

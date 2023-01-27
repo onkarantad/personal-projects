@@ -1,0 +1,83 @@
+server:
+  port: 8444
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: 
+    username: ssiuser
+    password: sql
+  sql:
+    init:
+      platform: mssql
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+  mvc:
+    servlet:
+      load-on-startup: 1
+  devtools:
+    restart:
+      additional-paths : /src/main/resources
+  profiles:
+    active: local
+  cache:
+    type: redis ## jcache
+    redis:
+      cache-null-values: false
+application:
+  cache:
+    cacheName: DEDUP_SSI ## Cache name
+    configPath: src/main/resources/
+    ttl: 300
+  dateFormat:
+    inputDateFormat: yyyy-MM-dd'T'HH:mm:ss
+    outputDateFormat: yyyy-MM-dd HH:mm:ss
+  keyConcatChar: '@&'
+  services:
+    dedup:
+      thread: 50
+      batch: 200
+    lookup:
+      thread: 60
+      batch: 200
+    microbatch:
+      thread: 70
+      batch: 200
+logging:
+  file: D:/LOGS/redisLogs/one.log
+  basePath: D:/LOGS/redisLogs
+  level:
+#    tomcat: debug
+    root: info
+#    org:
+#      hibernate: debug
+#      springframework:
+#        web: debug
+
+
+multicache:
+  caches:
+    dedupCache:
+      name: DEDUP_SSI #redis cache name
+      sql: SELECT * FROM SSI_SALES.REDIS_CONFIG.INPUT_CMS_DEDUP3
+      preLoad: LOAD_TYPE = 'Pre_Load'
+      microBatch: LOAD_TYPE IS NULL
+      logTable: SSI_SALES.SI_AUDIT_SSI_ABSA.REDIS_LOG
+      enableInd: true
+    lookupCache:
+      enableInd: true
+      lookupCacheList:
+        -
+          name: MST_TABLE_VAL_LIST
+          key: MST_TBL_VAL_SEQ_ID,MST_TBL_SI_CD
+          value: MST_VAL_LONG_DESC,MST_VAL_SI_CD
+          fromClause: SSI_SALES.SI_CORE_DWH.MST_TABLE_VAL_LIST
+          clearMap: true
+        -
+          name: MST_TABLE_VAL_LIST2
+          key: MST_TBL_VAL_NUM,MST_TBL_SI_CD
+          value: MST_VAL_CD_STD_1,MST_VAL_SHRT_DESC_1
+          fromClause: SSI_SALES.SI_CORE_DWH.MST_TABLE_VAL_LIST
+          clearMap: true

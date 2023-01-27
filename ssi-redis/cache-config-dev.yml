@@ -1,0 +1,4 @@
+usersCache:
+  ttl: 300000
+  maxIdleTime: 0
+  maxSize: 0

@@ -1,0 +1,28 @@
+#enum : STRING,INT,DATE
+#excel properties
+excelPath: D:/folksman_demo/Folksam/newMappings/a.xlsx
+sheetName: a
+
+#database properties (mssql/PostgreSQL/oracle)
+#for oracle -> dbHost=TNS-Name , dbSchema=wallet path
+
+#dbName: PostgreSQL
+#dbHost: localhost
+#dbPort: 5432
+#dbSchema: postgres
+#dbUser: postgres
+#dbPassword: root
+
+# oracle_wallet (dbHost=TNS_Name , dbSchema=wallet_path , dbPort = dummy)
+# --------------------
+#dbName: oracle_wallet
+#dbHost: dbsrc_high
+#dbPort: 0000
+#dbSchema: D:/DOCUMENTS/ORACLE_FREE_TIER/Wallet_dbSRC
+#dbUser: ADMIN
+#dbPassword: Oraclesrc2022
+
+
+sql:  INSERT INTO Folksam.SI_FLK_ODS.P_AGENT_POLICY_CONTACT (ID, IS_LEADING_AGENT, AGENT_PART_TYPE_ID, AGENT_PART_VALUE, UPDATE_VERSION, ACCOUNT_ID, CACL_COMM_RATE, OVERRIDEN_COMM_RATE, RENEWAL_COMM_RATE, OVERRIDEN_RENEWAL_COMM_RATE, IS_COLLECTING_AGENT, AGENT_EXT_POL_NR, COVER_AGENT_TOT_ID, EXT_DATA, LAST_UPDATE_AGENT_POL_CON_ID, AUD_SRC_SYS_NM, AUD_BATCH_ID, AUD_SUB_BATCH_ID, AUD_IU_FLAG, DYNAMIC_1, DYNAMIC_2, DYNAMIC_3) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+

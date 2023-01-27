@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Configuration status="warn">
+    <Properties>
+        <Property name="basePath">D:/file/nosql</Property>
+        <Property name="fileName">nosqlssiLog</Property>
+    </Properties>
+
+    <Appenders>
+        <RollingFile fileName="${basePath}/${fileName}.log" filePattern="${basePath}/previous/${fileName}-%d{MM-dd-yy}__%i.log" immediateFlush="false" name="fileLogger">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level]-&gt;[%t] %c{1} - %L - %msg.%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="20MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level]-&gt;[%t] %c{1} - %M - %L - %msg.%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+
+        <Root additivity="false" includeLocation="true" level="trace">
+            <AppenderRef level="trace" ref="fileLogger"/>
+            <AppenderRef level="info" ref="console"/>
+        </Root>
+
+    </Loggers>
+</Configuration>

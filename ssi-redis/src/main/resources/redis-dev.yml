@@ -1,0 +1,12 @@
+singleServerConfig:
+  idleConnectionTimeout: 1000000000
+  connectTimeout: 2000
+  timeout: 1000000000
+  retryAttempts: 1
+  retryInterval: 1000
+  address: 
+  password: 
+  connectionMinimumIdleSize: 32
+  connectionPoolSize: 64
+threads: 16
+nettyThreads: 64

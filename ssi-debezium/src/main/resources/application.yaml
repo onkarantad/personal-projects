@@ -1,0 +1,23 @@
+# SINK properties
+spring:
+  datasource:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: 
+    username: bi_user_oa
+    password: ibexi@2015
+  sql:
+    init:
+      platform: mssql
+  jpa:
+    show-sql: false
+    generate-ddl: true
+    ddl-auto: update
+    dialect : org.hibernate.dialect.SQLServerDialect
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: GMT
+  devtools:
+    restart:
+      additional-paths : /src/main/resources
+

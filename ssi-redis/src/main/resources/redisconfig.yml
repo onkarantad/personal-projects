@@ -1,0 +1,4 @@
+singleServerConfig: 
+    address: rediss://si-redis-cache.redis.cache.windows.net:6380
+    password: GFs87x14ysUPh7ixi9XKwrpkR9lE+fADCQVN4wxez5g=
+    
